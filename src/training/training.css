@@ -1,0 +1,82 @@
+.color {
+    min-height: 100vh;
+    background-color: white;
+}
+.que-con
+{
+    width: 80%;
+    height: 80%;
+}
+.training-header{
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-gap: 20px;
+    height: 30%;
+  }
+.training-timer {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(71, 223, 71);
+}
+.training-body{
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-gap: 20px;
+    height: 30%;
+    margin-top: 2%;
+  }
+  .yes-no{
+    width: 60%;
+    height: 30%;
+    margin-left: 20%;
+    display: grid;
+    text-align: center;
+    flex-direction: column;
+    background: linear-gradient(90deg, rgb(110,94,254)0%, rgba(73,63,252,1)100%);
+    border-radius: 20px;
+    margin-top: 8%;
+}
+
+table, th, td  {
+    border: 3px solid black;
+    color: black;
+    background-color: white;
+    text-align: center;
+  }
+th {
+    background-color: orange;
+}
+
+.img-training{
+    width: 40%;
+}
+.bidders{
+    width: 80%;
+}
+.img-bidders{
+    width: 90%;
+}
+.img-info{
+    width: 80%;
+}
+.con-table
+{
+    width: 80%;
+    height: 80%;
+}
+
+.yes-no-buttons{
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 4fr;
+    width: 98%;
+    background: white;
+    align-items: center;
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+
+.world {
+    grid-template-columns: 1fr 3fr 3fr;
+    display: grid;
+}

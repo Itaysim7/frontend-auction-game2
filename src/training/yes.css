@@ -1,0 +1,25 @@
+
+.img-dolar{
+  width: 125px;
+  height: 125px;
+}
+.img-avg{
+  width: 100px;
+  height: 75px;
+  margin-left: 15%;
+}
+
+  .temp{
+    width: 70%;
+    margin-left: 15%;
+  }
+  .worldd{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin-left: 20%;
+  }
+  .img-trainingg{
+    width: 150px;
+    height: 100px;
+}
