@@ -137,8 +137,8 @@ export class Game extends Component
                  paddingBottom:'5px', paddingTop:'5px',marginTop:'8px'}}> Your points:{(bonus*10).toFixed(2)}</h6>
                 <h6 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
                  paddingBottom:'5px', paddingTop:'5px',marginTop:'8px'}}> Bonus:{bonus}¢ </h6>
-                <h6 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
-                 paddingBottom:'5px', paddingTop:'5px',marginTop:'8px'}}> Information provider benefit:{agent}¢ </h6>
+                {/* <h6 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
+                 paddingBottom:'5px', paddingTop:'5px',marginTop:'8px'}}> Information provider benefit:{agent}¢ </h6> */}
               </div>
           </div>
           <div className="training-body">

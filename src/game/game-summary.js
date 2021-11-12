@@ -46,9 +46,9 @@ export class gameSummary extends Component
                paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Your points: {(bonus*10).toFixed(2)}</h2>
             <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
                paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Bonus: {(bonus).toFixed(2)}¢</h2>
-            <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
+            {/* <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
                paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Information provider benefit:{agent}¢ </h2>
-         
+          */}
             <h2 style={{color : 'white', backgroundColor: 'green', border: '2px solid black',
                paddingBottom:'3%', paddingTop:'3%',marginTop:'3%'}}>
                   Press "Continue" in order to get your bonus</h2>
