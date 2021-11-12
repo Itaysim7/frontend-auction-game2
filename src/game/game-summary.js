@@ -11,7 +11,7 @@ export class gameSummary extends Component
   {
     super(props)
     this.state = {
-      round:1, bonus:0
+      round:1, bonus:0, agent: 0
     }
   }
 
@@ -19,7 +19,7 @@ export class gameSummary extends Component
   {
     API.getGameSummary({id: this.props.match.params.id})
     .then(resp => {
-      this.setState({round: resp.round, bonus:resp.bonus})
+      this.setState({round: resp.round, bonus:resp.bonus, agent: resp.agent})
     })
     .catch(error => console.log(error))
   }
@@ -34,11 +34,11 @@ export class gameSummary extends Component
 
   render ()
   {
-    const {round, bonus} = this.state;
+    const {round, bonus, agent} = this.state;
 
     return(
         <div className="color">
-          <div className="result" style= {{width:"60%", marginLeft:"20%"}}>
+          <div className="result" style= {{width:"60%", marginLeft:"20%", paddingTop:"10px"}}>
             <h1 style= {{color:"red"}}>Game-summary</h1>
             <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
                paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Rounds: {round}</h2>
@@ -46,9 +46,11 @@ export class gameSummary extends Component
                paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Your points: {(bonus*10).toFixed(2)}</h2>
             <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
                paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Bonus: {(bonus).toFixed(2)}¢</h2>
+            <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
+               paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Information provider benefit:{agent}¢ </h2>
          
             <h2 style={{color : 'white', backgroundColor: 'green', border: '2px solid black',
-               paddingBottom:'3%', paddingTop:'3%',marginTop:'8%'}}>
+               paddingBottom:'3%', paddingTop:'3%',marginTop:'3%'}}>
                   Press "Continue" in order to get your bonus</h2>
 
             <Button className="button-container"  variant="outline-primary" size="lg"

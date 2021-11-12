@@ -11,7 +11,7 @@ export class trainingSummary extends Component
   {
     super(props)
     this.state = {
-        round:1, bonus:0
+        round:1, bonus:0, agent:0
     }
   }
 
@@ -19,7 +19,7 @@ export class trainingSummary extends Component
   {
     API.getTrainingSummary({id: this.props.match.params.id})
     .then(resp => {
-      this.setState({round: resp.round, bonus:resp.bonus})
+      this.setState({round: resp.round, bonus:resp.bonus, agent: resp.agent})
     })
     .catch(error => console.log(error))
   }
@@ -34,7 +34,7 @@ export class trainingSummary extends Component
 
   render ()
   {
-    const {round, bonus} = this.state;
+    const {round, bonus, agent} = this.state;
 
     return(
         <div className="color">
@@ -46,6 +46,8 @@ export class trainingSummary extends Component
                paddingBottom:'15px', paddingTop:'15px',marginTop:'20px'}}> Your points: {(bonus*10).toFixed(2)}</h2>
             <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
                paddingBottom:'15px', paddingTop:'15px',marginTop:'20px'}}> Bonus: {(bonus).toFixed(2)}¢</h2>
+            <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
+               paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Information provider benefit:{agent}¢ </h2>
          
             <Button className="button-container"  variant="outline-primary" size="lg"
                 onClick={this.nextClicked} >Next</Button>

@@ -34,7 +34,7 @@ export class Trainig extends Component
     super(props)
     this.state = {
       isParticipant: true, currentIndex: 1, questionId: 1, bonus:0, visible : false,
-      x:1 , y:1, w:1, zv:1, table : [-1], isButtonDisabled: true, points: 0,
+      x:1 , y:1, w:1, zv:1, table : [-1], isButtonDisabled: true, points: 0, agent:0,
       x_array: [1,1,1,1,1,1,1]
     }
   }
@@ -76,7 +76,7 @@ export class Trainig extends Component
                             [resp.v31, resp.v32, resp.v33, resp.v34, resp.v35, resp.v36, resp.v37],
                             [resp.v41, resp.v42, resp.v43, resp.v44, resp.v45, resp.v46, resp.v47],
                             [resp.v51, resp.v52, resp.v53, resp.v54, resp.v55, resp.v56, resp.v57]]
-            this.setState({points: temp_points, currentIndex: resp.round, bonus:resp.bonus, x: resp.x, y:resp.y, w:resp.w, zv:temp_zv, table: tempTable, questionId: resp.id, x_array:[resp.x1, resp.x2, resp.x3, resp.x4, resp.x5 ,resp.x6, resp.x7] })  
+            this.setState({points: temp_points, currentIndex: resp.round, bonus:resp.bonus, agent:resp.agent, x: resp.x, y:resp.y, w:resp.w, zv:temp_zv, table: tempTable, questionId: resp.id, x_array:[resp.x1, resp.x2, resp.x3, resp.x4, resp.x5 ,resp.x6, resp.x7] })  
           })
     .catch(error => console.log(error))
     setTimeout(() => this.setState({ isButtonDisabled: false }), 10000);
@@ -94,7 +94,7 @@ export class Trainig extends Component
 
   render ()
   {
-    const {isParticipant, x, y, w, zv, table, currentIndex, bonus, isButtonDisabled, x_array} = this.state;
+    const {isParticipant, x, y, w, zv, table, currentIndex, bonus, agent, isButtonDisabled, x_array} = this.state;
 
     if( !isParticipant)
     {
@@ -119,12 +119,14 @@ export class Trainig extends Component
                 <img className="img-training" src={process.env.PUBLIC_URL + '/Img.png'} alt="logo" />
               </div>
               <div>
-                <h5 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
-                 paddingBottom:'5px', paddingTop:'5px',marginTop:'20px'}}> Rounds:{currentIndex} </h5>
-                <h5 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
-                 paddingBottom:'5px', paddingTop:'5px',marginTop:'10px'}}> Your points:{(bonus*10).toFixed(2)}</h5>
-                <h5 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
-                 paddingBottom:'5px', paddingTop:'5px',marginTop:'10px'}}> Bonus:{bonus}¢ </h5>
+                <h6 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
+                 paddingBottom:'5px', paddingTop:'5px',marginTop:'10px'}}> Rounds:{currentIndex} </h6>
+                <h6 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
+                 paddingBottom:'5px', paddingTop:'5px',marginTop:'10px'}}> Your points:{(bonus*10).toFixed(2)}</h6>
+                <h6 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
+                 paddingBottom:'5px', paddingTop:'5px',marginTop:'10px'}}> Bonus:{bonus}¢ </h6>
+                <h6 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
+                 paddingBottom:'5px', paddingTop:'5px',marginTop:'10px'}}> Information provider benefit:{agent}¢ </h6>
               </div>
           </div>
           <div className="training-body">
