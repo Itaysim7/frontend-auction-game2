@@ -47,7 +47,7 @@ export class trainingSummary extends Component
             <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
                paddingBottom:'15px', paddingTop:'15px',marginTop:'20px'}}> Bonus: {(bonus).toFixed(2)}¢</h2>
             <h2 style={{color : 'white', backgroundColor: '#2d6ad5', border: '2px solid black',
-               paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Information provider benefit:{agent}¢ </h2>
+               paddingBottom:'3%', paddingTop:'3%',marginTop:'2%'}}> Information provider benefit:{agent}$ </h2>
          
             <Button className="button-container"  variant="outline-primary" size="lg"
                 onClick={this.nextClicked} >Next</Button>
