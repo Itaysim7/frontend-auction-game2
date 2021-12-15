@@ -1,4 +1,4 @@
-const BASE_URL= "https://db-auction-game4.herokuapp.com/";
+const BASE_URL= "https://db-auction-game5.herokuapp.com/";
 // const BASE_URL= "http://127.0.0.1:8000/";
 
 export class API {
